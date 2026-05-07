@@ -4,6 +4,13 @@ from modelos.libro import Libro
 from modelos.revista import Revista
 from modelos.dvd import DVD
 
+import questionary
+from rich.console import Console
+from rich.table import Table
+
+from rich.prompt import Prompt, IntPrompt
+from rich.panel import Panel
+
 
 def mostrar_menu():
     print("\n--- MENÚ PRINCIPAL ---")
