@@ -1,16 +1,26 @@
+from database import (
+    init_db, guardar_usuario, guardar_recurso,
+    cargar_usuarios, cargar_recursos,
+    actualizar_estado_recurso, registrar_prestamo_db, registrar_devolucion_db
+)
+
+
 class Biblioteca:
     """
-    Clase que gestiona usuarios y recursos.
+    Clase que gestiona usuarios y recursos con persistencia en SQLite.
     """
     def __init__(self):
-        self.recursos = []
-        self.usuarios = []
+        init_db()
+        self.usuarios = cargar_usuarios()
+        self.recursos = cargar_recursos()
 
     def agregar_recurso(self, recurso):
         self.recursos.append(recurso)
+        guardar_recurso(recurso)
 
     def registrar_usuario(self, usuario):
         self.usuarios.append(usuario)
+        guardar_usuario(usuario)
 
     def buscar_por_titulo(self, titulo):
         resultados = []
@@ -42,6 +52,8 @@ class Biblioteca:
                 raise Exception(f"No existe el recurso '{titulo_recurso}'.")
 
             recurso.prestar(usuario)
+            actualizar_estado_recurso(recurso)
+            registrar_prestamo_db(usuario.id_usuario, recurso.id)
             print(f"Préstamo realizado: {recurso.titulo} para {usuario.nombre}.")
 
         except Exception as error:
@@ -54,6 +66,8 @@ class Biblioteca:
                 raise Exception(f"No existe el recurso '{titulo_recurso}'.")
 
             recurso.devolver()
+            actualizar_estado_recurso(recurso)
+            registrar_devolucion_db(recurso.id)
             print(f"Devolución realizada: {recurso.titulo}.")
 
         except Exception as error:

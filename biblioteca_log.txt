@@ -2,3 +2,9 @@
 2026-05-06 12:28:28 | Operación: devolver | Recurso: El Hobbit
 2026-05-06 12:38:39 | Operación: prestar | Recurso: El Hobbit
 2026-05-06 12:38:39 | Operación: devolver | Recurso: El Hobbit
+2026-05-08 14:01:36 | Operación: prestar | Recurso: El Hobbit
+2026-05-08 14:01:36 | Operación: devolver | Recurso: El Hobbit
+2026-05-08 14:01:41 | Operación: prestar | Recurso: El Hobbit
+2026-05-08 14:01:41 | Operación: devolver | Recurso: El Hobbit
+2026-05-08 14:02:03 | Operación: prestar | Recurso: El Hobbit
+2026-05-08 14:02:03 | Operación: devolver | Recurso: El Hobbit

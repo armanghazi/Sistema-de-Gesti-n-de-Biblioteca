@@ -28,6 +28,7 @@ class Recurso:
     Clase base para cualquier recurso de la biblioteca.
     """
     def __init__(self, titulo, genero, duracion_prestamo=3):
+        self.id = None
         self.titulo = titulo
         self.genero = genero
         self.disponible = True

@@ -5,6 +5,12 @@ from rich.table import Table
 from rich.panel import Panel
 from rich.prompt import IntPrompt
 
+from biblioteca import Biblioteca
+from usuario import Usuario
+from modelos.libro import Libro
+from modelos.revista import Revista
+from modelos.dvd import DVD
+
 console = Console()
 
 
@@ -169,7 +175,7 @@ def mostrar_detalle_material(biblioteca):
 
 def main():
 
-    biblioteca = biblioteca()
+    biblioteca = Biblioteca()
 
     # Usuarios
     usuario1 = Usuario("Ana", "García", 1)
